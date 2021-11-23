@@ -1,0 +1,16 @@
+{
+  "id": "123",
+  "photoUrl": "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
+  "name": "Jhon Doe",
+  "email": "jhon.doe@glovoapp.com",
+  "firstDayGlovo": "21/12/2020",
+  "phone": "+34655656565",
+  "vehicle": "BICYCLE",
+  "city": "Barcelona",
+  "totalOrders": 190,
+  "totalKms": 1000,
+  "reassigmentsPerc": 4,
+  "cancellationsPerc": 3,
+  "avgSpeed": 60,
+  "avgDeliveryTimeWeek": [20, 21, 19, 25, 21, 17, 30]
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Web Specialist Challenge App</title>
+</head>
+
+<body>
+
+  <!-- Intro profile -->
+  <div class="main-container">
+    <div class="section">
+      <div class="hello-container">
+        <img id="profile-img" alt="Glovo profile imatge">
+        <div>
+          <h2 id="hello-title">Hello, <span id="nameTitle"></span></h2>
+          <p class="desk-txt">Take a look at your achievements since you started using Glovo</p>
+          <p class="resp-txt">Check out at your Glovo achievements</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personal info section -->
+    <div class="section">
+      <h3 class="txt-margin">Personal information</h3>
+      <div class="personal-info-cards-container">
+        <button id="seeMore-btn">See more <span id="seeMoreDownArrow">˅</span><span id="seeMoreUpArrow"
+            class="hidden">˄</span></button>
+        <div class="personal-infocards-block">
+          <div>
+            <p class="bold">Name</p>
+            <p id="name"></p>
+          </div>
+          <div class="personal-infocards-container hidden">
+            <p class="bold">Email</p>
+            <p id="email"></p>
+          </div>
+        </div>
+        <div class="personal-infocards-block">
+          <div class="personal-infocards-container hidden">
+            <p class="bold">Starting Date</p>
+            <p id="startingDate"></p>
+          </div>
+          <div class="personal-infocards-container hidden">
+            <p class="bold">Phone</p>
+            <p id="phone"></p>
+          </div>
+        </div>
+
+        <!-- Personal info section - Vehicle and city desktop block -->
+        <div class="personal-infocards-block2 personal-infocards-container2">
+          <div class="personal-infocard-block2-container personal-infocard-block2-border">
+            <img class="icon" src="/icons/vehicle.png" alt="">
+            <div>
+              <p class="bold">Vehicle</p>
+              <p id="vehicle"></p>
+            </div>
+          </div>
+          <div class="personal-infocard-block2-container">
+            <img class="icon" src="/icons/city.png" alt="">
+            <div>
+              <p class="bold">City</p>
+              <p id="city"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vehicle and city responsive block -->
+      <div class="personal-infocards-block2-resp personal-infocards-container2-resp hidden-desk">
+        <div class="personal-infocard-block2-container personal-infocard-block2-border card">
+          <img class="icon" src="/icons/vehicle.png" alt="">
+          <div>
+            <p class="bold">Vehicle</p>
+            <p id="vehicleResp"></p>
+          </div>
+        </div>
+        <div class="personal-infocard-block2-container card">
+          <img class="icon" src="/icons/city.png" alt="">
+          <div>
+            <p class="bold">City</p>
+            <p id="cityResp"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Your achievements section -->
+      <div class="section">
+        <h3 class="txt-margin">Your achievements</h3>
+        <p class="txt-margin">Since you started using Glovo</p>
+        <div class="achievements-container">
+          <div class="card">
+            <p class="bold desk-txt">Orders Delivered</p>
+            <div class="icon-box">
+              <img class="icon1" src="/icons/order.png" alt="">
+              <p id="ordersDelivered" class="bold"></p>
+            </div>
+            <p class="bold resp-txt">Orders Delivered</p>
+          </div>
+          <div class="card">
+            <p class="bold desk-txt">Kms travelled</p>
+            <div class="icon-box">
+              <img class="icon1" src="/icons/order.png" alt="">
+              <p class="bold"><span id="kmsTravelled"></span> Km</p>
+            </div>
+            <p class="bold resp-txt">Kms travelled</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other highlights section -->
+      <div class="section">
+        <h3 class="txt-margin">Other highlights</h3>
+        <p class="txt-margin">Weekly metrics of your collaboration with glovo</p>
+
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <!-- Other highlights section - desk -->
+        <div class="highlights-container">
+          <div class="card min-width-none">
+            <p class="bold desk-txt">% of total cancellations</p>
+            <div class="icon-box">
+              <img class="icon1" src="/icons/cancellation.png" alt="">
+              <p class="bold"><span id="totalCancellations"></span>%</p>
+            </div>
+          </div>
+          <div class="card min-width-none">
+            <p class="bold desk-txt">% of reassignements</p>
+            <div class="icon-box">
+              <img class="icon1" src="/icons/reassigments.png" alt="">
+              <p class="bold"><span id="reassignements"></span>%</p>
+            </div>
+          </div>
+          <div class="card min-width-none">
+            <p class="bold desk-txt">Average speed</p>
+            <div class="icon-box">
+              <img class="icon1" src="/icons/speed.png" alt="">
+              <p class="bold"><span id="avgSpeed"></span> Km/h</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other highlights section - resp -->
+        <div class="highlights-container-resp hidden-desk">
+          <div class="card min-width-none">
+            <div class="icon-box">
+              <img class="icon1" src="/icons/cancellation.png" alt="">
+              <p class="bold"><span id="totalCancellationsResp"></span>%</p>
+            </div>
+            <p class="bold resp-txt">% of total cancellations</p>
+          </div>
+          <div class="card min-width-none">
+            <div class="icon-box">
+              <img class="icon1" src="/icons/reassigments.png" alt="">
+              <p class="bold"><span id="reassignementsResp"></span>%</p>
+            </div>
+            <p class="bold resp-txt">% of reassignements</p>
+          </div>
+        </div>
+        <div class="card hidden-desk min-width-none width-50 block">
+          <div class="icon-box">
+            <img class="icon1" src="/icons/speed.png" alt="">
+            <p class="bold"><span id="avgSpeedResp"></span> Km/h</p>
+          </div>
+          <p class="bold resp-txt">Average speed</p>
+        </div>
+      </div>
+
+      <!-- Log out btn -->
+      <div class="section btn-section">
+        <button class="log-out-btn">Log out</button>
+      </div>
+    </div>
+
+    <!-- Alert pop up -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <img class="icon1" src="/icons/attention.png" alt="">
+        <h3 class="mg-top">You are driving too fast!</h3>
+        <p class="mg-top">Please, for your
+          safety, we ask you to go slower and take care while driving.</p>
+        <button class="accept-btn">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
